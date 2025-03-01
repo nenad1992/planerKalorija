@@ -43,7 +43,7 @@ def run_tablicakalorija():
         for row in data:
             tree.insert("", "end", values=row)
         
-        tree.grid(row=5, column=0, columnspan=2)
+        tree.grid(row=6, column=0, columnspan=2)
 
     # Dodavanje podataka u bazu
     def adding_values_in_database():
@@ -150,12 +150,14 @@ def run_tablicakalorija():
 
     # Labele za namirnicu i makronutrijente
     namirnica_label = Label(tablicakalorija, text="Namirnica:")
+    kalorije_label = Label(tablicakalorija, text="Kalorije (kcal):")
     proteini_label = Label(tablicakalorija, text="Proteini (g):")
     ugljenihidrati_label = Label(tablicakalorija, text="Ugljeni hidrati (g):")
     masti_label = Label(tablicakalorija, text="Masti (g):")
 
     # Entry polja za namirnicu i makronutrijente
     namirnica_entry = Entry(tablicakalorija)
+    kalorije_entry = Entry(tablicakalorija)
     proteini_entry = Entry(tablicakalorija)
     ugljenihidrati_entry = Entry(tablicakalorija)
     masti_entry = Entry(tablicakalorija)
@@ -163,23 +165,25 @@ def run_tablicakalorija():
 
     # Pozicioniranje labela za namirnicu i makronutrijente
     namirnica_label.grid(row=0, column=0, padx=5, sticky='w')
-    proteini_label.grid(row=1, column=0, padx=5, sticky='w')
-    ugljenihidrati_label.grid(row=2, column=0, padx=5, sticky='w')
-    masti_label.grid(row=3, column=0, padx= 5, sticky='w')
+    kalorije_label.grid(row=1, column=0, padx=5, sticky='w')
+    proteini_label.grid(row=2, column=0, padx=5, sticky='w')
+    ugljenihidrati_label.grid(row=3, column=0, padx=5, sticky='w')
+    masti_label.grid(row=4, column=0, padx= 5, sticky='w')
 
     # Pozicioniranje entry polja namirnicu i makronutrijente
     namirnica_entry.grid(row=0, column=1, padx=5)
-    proteini_entry.grid(row=1, column=1, padx=5)
-    ugljenihidrati_entry.grid(row=2, column=1, padx=5)
-    masti_entry.grid(row=3, column=1, padx=5)
+    kalorije_entry.grid(row=1, column=1, padx=5)
+    proteini_entry.grid(row=2, column=1, padx=5)
+    ugljenihidrati_entry.grid(row=3, column=1, padx=5)
+    masti_entry.grid(row=4, column=1, padx=5)
 
 
 
     # Buttons
     dodajVrednosti_button = Button(tablicakalorija, text="Dodaj", command=adding_values_in_database)
-    dodajVrednosti_button.grid(row=4, column=0, pady=10, sticky='w', padx=5)
+    dodajVrednosti_button.grid(row=5, column=0, pady=10, sticky='w', padx=5)
     izmeniVrednost_button = Button(tablicakalorija, text="Izmeni", command=change_values_in_database)
-    izmeniVrednost_button.grid(row=4, column=0, sticky='e')
+    izmeniVrednost_button.grid(row=5, column=0, sticky='e')
 
 
 
