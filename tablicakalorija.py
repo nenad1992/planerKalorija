@@ -156,13 +156,9 @@ def run_tablicakalorija():
             masti_entry.delete(0, 'end')
             prikazVrednosti()
 
-        def change_values_in_database_cancel():
-            tablicakalorija.destroy()
-
-
         ok_button = Button(tablicakalorija, text="OK", command=change_values_in_database_ok)
         ok_button.grid(row=5, column=0, padx=5, pady=10, sticky='w')
-        odustani_button = Button(tablicakalorija, text="Odustani", command=change_values_in_database_cancel)
+        odustani_button = Button(tablicakalorija, text="Odustani", command=lambda: tablicakalorija.destroy())
         odustani_button.grid(row=5, column=0, sticky='e')
 
         def on_row_selected(event):
