@@ -42,7 +42,12 @@ def dodaj_obrok():
     for row in data:
         tree.insert("", "end", values=row)
 
-    tree.grid(row=0, column=0, padx=10)  
+    tree.grid(row=0, column=0, padx=10, columnspan=2)  
 
+    # Dodavanje dugmeta Izaberi i Odustani
+    izaberi_button = Button(obroci, text="Izaberi")
+    odustani_button = Button(obroci, text="Odustani", command=lambda: obroci.destroy())
+    izaberi_button.grid(row=1, column=0, padx=10, pady=10)
+    odustani_button.grid(row=1, column=1, padx=10, pady=10)
 
     obroci.mainloop()
