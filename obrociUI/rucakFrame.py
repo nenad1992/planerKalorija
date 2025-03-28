@@ -4,7 +4,7 @@ from tkinter import ttk
 def rucakFrame(root):
     # Frame rucak
     rucak_frame = LabelFrame(root, text="Rucak")
-    rucak_frame.grid(row=4, column=3, rowspan=3, padx=50)
+    rucak_frame.grid(row=3, column=3, rowspan=3, padx=50)
 
     # Dodavanje i pozicioniranje dugmeta za dodavanje i uklanje obroka za rucak
     rucak_dugme = Button(rucak_frame, text="Dodaj obrok")
